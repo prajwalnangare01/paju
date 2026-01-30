@@ -101,7 +101,7 @@ app.get('/option-chain', async (req, res) => {
 
     try {
         const response = await axios.get(url, { params, headers });
-        res.json(response.data); // Send the response data back to the client
+        res.json(response.data); // Send the response data back to the client/
     } catch (error) {
         console.error('Error fetching option chain data:', error.response ? error.response.data : error.message);
         res.status(500).send('Error fetching option chain data');
@@ -112,3 +112,4 @@ app.get('/option-chain', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
